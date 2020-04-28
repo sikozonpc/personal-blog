@@ -1,0 +1,47 @@
+baseURL = "http://example.org/"
+languageCode = "en-GB"
+title = "Tiago Taquelim"
+theme = "archie"
+copyright = "© Tiago Taquelim"
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[params]
+	mode="auto"
+	featherIconsCDN=true
+	subtitle = "My small corner on the world wide web where I post about Web dev, Game dev, UI Design and Philosophy."
+	authorName                        = "Tiago Taquelim"
+  defaultKeywords                   = ["blog", "tiago", "taquelim", "software", "develop"]
+  defaultDescription                = "Tiago Taquelim, a software developer."
+  truncateSummaryForMetaDescription = 120
+
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/sikozonpc"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/tiago_taquelim"
+
+[[menu.main]]
+name = "Blog"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+
+disableRSS = false

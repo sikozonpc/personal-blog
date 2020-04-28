@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tiago Taquelim</title>
+    <link>http://example.org/</link>
+    <description>Recent content on Tiago Taquelim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© Tiago Taquelim</copyright>
+    <lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://example.org/posts/my-first-post/</link>
+      <pubDate>Tue, 28 Apr 2020 20:43:04 +0100</pubDate>
+      
+      <guid>http://example.org/posts/my-first-post/</guid>
+      <description>This is my first psot with Hugo ! Ohh yheaa boiii
+func main() { message := &amp;#34;Lets go !!&amp;#34; fmt.Println(message) }  Yep, thats some Go code boii!!
+ </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>About Hey there, I’m a software developer from Portugal working on the Front-end side of applications.
+I enjoy solving software related problems and building open source tools.
+Work I’m currently working at MobieTrain a micro-learning platform as a Front-end developer.
+I enjoy the most working on complex application and systems.
+Contact I’m available for a chatting through LinkedIn and Twitter.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Tiago Taquelim</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Tags on Tiago Taquelim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© Tiago Taquelim</copyright>
+    <lastBuildDate>Tue, 28 Apr 2020 20:43:04 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>javascript</title>
+      <link>http://example.org/tags/javascript/</link>
+      <pubDate>Tue, 28 Apr 2020 20:43:04 +0100</pubDate>
+      
+      <guid>http://example.org/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>http://example.org/tags/react/</link>
+      <pubDate>Tue, 28 Apr 2020 20:43:04 +0100</pubDate>
+      
+      <guid>http://example.org/tags/react/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

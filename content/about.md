@@ -23,4 +23,4 @@ developer.
 
 ## Contact
 
-I’m available for a chatting through LinkedIn and Twitter.
+I’m available for a chat through my [LinkedIn](https://www.linkedin.com/in/tiago-taquelim/) and Twitter.

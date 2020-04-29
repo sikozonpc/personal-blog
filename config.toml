@@ -11,7 +11,7 @@ pygmentscodefencesguesssyntax = true
 [params]
 	mode="auto"
 	featherIconsCDN=true
-	subtitle = "My small corner on the world wide web where I post about Web dev, Game dev, UI Design and Philosophy."
+	subtitle = "My small corner on the world wide web where I post about web dev, game dev and UI design"
 	authorName                        = "Tiago Taquelim"
   defaultKeywords                   = ["blog", "tiago", "taquelim", "software", "develop"]
   defaultDescription                = "Tiago Taquelim, a software developer."

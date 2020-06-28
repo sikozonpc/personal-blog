@@ -22,7 +22,7 @@ And so with this post my aim is to give my 2 cents on how to avoid this common m
 ### Background
 
 Unity, is a component driven game engine, it utilizes the [Component Pattern](https://gameprogrammingpatterns.com/component.html) for it's development, where each component is a part of 
-a bigger system and has it's own specific job (ideally) and can be attached to any game object to add functionality ore behaviour.
+a bigger system and has it's own specific job (ideally) and can be attached to any game object to add functionality or behaviour.
 
 A good component is a component that nicely fits into the system and is also unaware of the system.
 
@@ -40,7 +40,7 @@ subscribe to messages `MessageBus.AddSubscriber(MessageSub msgSub)`.
 
 #### Messages
 
-These contain the data that is communicated and an ID to identifier the message type, I would recommend having a enum for the message ID since 
+These contain the data that is communicated between and an ID to identify the message type, I would recommend having an enum for the message ID since 
 strings are not unique and can easyly be misstyped.
 
  
@@ -78,8 +78,8 @@ and the rest are the public methods to `AddSubscriber` and `SendMessage`
 
 ### Turning game objects into listeners
 
-A very cool thing you even do with Unity is create a component to be a `MessageSubscriberController` and with it you can attach to game object and define 
-the events on the Unity editor itself, it's the way to make this game object a **message listener**
+A very cool thing you even do with Unity is to create a component to be a `MessageSubscriberController` and with it you can attach to any game object and define 
+the events on the Unity editor itself, this way we make the game object a **message listener** for specific events.
 
 
 ### Conclusion

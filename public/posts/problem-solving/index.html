@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Problem Solving Techniques - Tiago Taquelim</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Problem Solving Techniques" />
+<meta property="og:description" content="How to solve and use logical thinking in software related problems." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiagotaquelim.netlify.app/posts/problem-solving/" />
+<meta property="article:published_time" content="2019-05-22T20:43:04+01:00" />
+<meta property="article:modified_time" content="2019-05-22T20:43:04+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Problem Solving Techniques"/>
+<meta name="twitter:description" content="How to solve and use logical thinking in software related problems."/>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://tiagotaquelim.netlify.app/css/main.css" /><link rel="stylesheet" type="text/css" href="https://tiagotaquelim.netlify.app/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head><body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://tiagotaquelim.netlify.app/">Tiago Taquelim</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Blog</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Problem Solving Techniques</h1>
+			<div class="meta">Posted on May 22, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>In my humble opinion I think <strong>problem solving is the single most desired skill in a developer or an engineer</strong> and odds are if you came from a self-taught path like me, algorithms and complex data structures might be <strong>daunting</strong>.</p>
+<p>At the start I couldn&rsquo;t even solve easy problems on Hackerrank, even though I knew how to make well rounded applications, and that made me frustrated and anxious.</p>
+<p>So, at the time, I decided to learn the basics of computer science and also took a course on algorithms and data structures with JavaScript from <a href="https://www.udemy.com/js-algorithms-and-data-structures-masterclass/#instructor-1">Colt Steele</a> which I highly recommend taking if you relate to me.</p>
+<h2 id="1-understanding-the-problem">1.) Understanding the problem</h2>
+<p>Either you&rsquo;re given a problem to solve within x amount of time on an interview or you&rsquo;re solving Hackerrank challenges for fun or even to practice for interviews, <strong>you will need to read carefully and draft a plan</strong> to solve the exercise.</p>
+<p>This is the most important step of all, if you don&rsquo;t draft a plan and start coding like a headless chicken you might get lost in the problem and panic.</p>
+<blockquote>
+<p><strong>Step 1: Understand the problem in hand, read it well and use your own words to describe it.</strong></p>
+</blockquote>
+<p>Let&rsquo;s say the given problem is (the typical FizzBuzz):</p>
+<ul>
+<li>&ldquo;Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.&rdquo;</li>
+</ul>
+<p>So we want something like this: <em>to print &ldquo;Fizz&rdquo; for the multiples of 3, for the multiples of 5 &ldquo;Buzz&rdquo; and for both &ldquo;FizzBuzz&rdquo;, otherwise print the current number.</em></p>
+<h2 id="2-explore-examples">2.) Explore examples</h2>
+<blockquote>
+<p><strong>Step 2: Explore the given examples (IF given) for different inputs, edge cases and possible inputs that might cause bugs.</strong></p>
+</blockquote>
+<p>In the FizzBuzz exercise they don&rsquo;t give examples but in some problems and most of the Hackerrank ones do, and this is a BIG help to understanding the problem.</p>
+<p>Sometimes you think <strong>the input is an array but it&rsquo;s an object</strong>, that&rsquo;s something to look for, if they don&rsquo;t explicitly say, Ask them.</p>
+<h2 id="3-elaborate-pseudo-code">3.) Elaborate Pseudo Code</h2>
+<blockquote>
+<p><strong>Step 3: Write how it fits best for you pseudo code (can be comments inside the code too), the important note to take here is to BREAK THE CODE INTO STEPS</strong></p>
+</blockquote>
+<p>For our example it can be:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ## Pseudo code
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">loop</span> <span style="color:#a6e22e">from</span> (<span style="color:#ae81ff">1</span> <span style="color:#a6e22e">to</span> <span style="color:#ae81ff">100</span>)<span style="color:#f92672">:</span>
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">currNum</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#a6e22e">AND</span> <span style="color:#a6e22e">curNum</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+		<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;FizzBuzz&#34;</span>)
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">curNum</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+		<span style="color:#a6e22e">print</span> (<span style="color:#e6db74">&#34;Fizz&#34;</span>)
+	<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">currNum</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>
+		<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Buzz&#34;</span>)
+	<span style="color:#66d9ef">else</span><span style="color:#f92672">:</span>
+		<span style="color:#a6e22e">print</span> (<span style="color:#a6e22e">currNum</span>)
+<span style="color:#a6e22e">end</span> <span style="color:#a6e22e">loop</span>
+</code></pre></div><h2 id="4-solve-by-pieces">4.) Solve by pieces</h2>
+<p>Now that you broke into blocks the approach, <strong>solve by pieces and if you get stuck or don&rsquo;t know how to implement you can skip that part</strong> and do what you know, because you now have a plan.</p>
+<blockquote>
+<p><strong>Step 4: Solve step by step according to your pseudo code.</strong></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">fizzBuzz</span>() {
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;FizzBuzz&#34;</span>);
+		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Fizz&#34;</span>);
+		} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Buzz&#34;</span>);
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
+		}
+	}
+}
+</code></pre></div><h2 id="5-refactor">5.) Refactor</h2>
+<p>If you couldn&rsquo;t solve the problem <strong>it&rsquo;s fine because you logically approached it</strong> and you <strong>demonstrated your thought process</strong>, that&rsquo;s very important for you and the interviewer.</p>
+<p>Also, if you are practicing and you can&rsquo;t solve it, <strong>try again later</strong>, take a break and come again later, most of the time the solution will popup in your head. If it doesn&rsquo;t you probabily know where you need to improve.</p>
+<p>But if you successfully solved the problem and you still have time I highly recommend to <strong>refactor the code</strong>. Reduce it&rsquo;s time and space complexity, make it more readable, add comments and see other people&rsquo;s submissions.</p>
+<p>Although this step is OPTIONAL but if you have time I would <strong>dive deeper into the code</strong> you just wrote and make it better.</p>
+<p>Thank you very much for reading, I wish you the best in your coding journey.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/computer-science">computer-science</a></li>
+					
+					<li><a href="/tags/javascript">javascript</a></li>
+					
+					<li><a href="/tags/algorithms">algorithms</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/sikozonpc" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/tiago_taquelim" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2020  © Tiago Taquelim |  Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/athul/archie">Archie</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+
+</div>
+    </body>
+</html>

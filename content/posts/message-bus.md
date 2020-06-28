@@ -1,9 +1,9 @@
 ---
 title: "Handling game events with an Event Message Bus"
-date: 2020-06-28T20:43:04+01:00
+date: 2020-06-28
 draft: false
 description: "Improve your game code by decoupling object references with an event based system"
-tags: [c#, game-dev, computer-science]
+tags: [csharp, game-dev, computer-science]
 ---
 
 ### The problem

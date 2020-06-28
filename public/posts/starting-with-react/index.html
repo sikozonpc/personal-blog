@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Starting with React, Building an application &amp; Tips - Tiago Taquelim</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Starting with React, Building an application &amp; Tips" />
+<meta property="og:description" content="What to expect from React, the basics and further resources." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiagotaquelim.netlify.app/posts/starting-with-react/" />
+<meta property="article:published_time" content="2019-05-09T20:43:04+01:00" />
+<meta property="article:modified_time" content="2019-05-09T20:43:04+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Starting with React, Building an application &amp; Tips"/>
+<meta name="twitter:description" content="What to expect from React, the basics and further resources."/>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://tiagotaquelim.netlify.app/css/main.css" /><link rel="stylesheet" type="text/css" href="https://tiagotaquelim.netlify.app/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head><body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://tiagotaquelim.netlify.app/">Tiago Taquelim</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Blog</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Starting with React, Building an application &amp; Tips</h1>
+			<div class="meta">Posted on May 9, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<blockquote>
+<p>NOTE: This article was origanily <a href="https://medium.com/@tiago.taquelim.ferreira/starting-with-react-building-an-application-tips-dac62e347230">posted on Medium</a>.</p>
+</blockquote>
+<p><img src="https://res.cloudinary.com/ddfkf8qha/image/upload/v1578085344/floating%20point%20images/startingwithreact_hrp2qy.jpg" alt="Starting with React"></p>
+<p>So I’ve been learning React for a few months and I wanted to share some of the knowledge I acquired during this journey.</p>
+<p>Building software with React is quite a pleasure for me, I learned new and better ways to do it everyday. However, at the start, especially if you are new to software development it can be a bit overwhelming and complex to understand the abstractions made by these frameworks.</p>
+<p>And so I’ve decided to write this article, however <strong>I don’t teach everything about React here</strong>, my objective with this article is <strong>give you an overview of what React can be</strong>, how fun it is and <strong>redirect you to some good resources</strong> for your own journey.</p>
+<p>Also, I recommend taking a look at a few things before diving into the React world:</p>
+<ol>
+<li>Notions of HTML &amp; CSS.</li>
+<li>Basics of JavaScript.</li>
+<li>ES6+ Syntax (Optional, but recommended).</li>
+</ol>
+<h2 id="what-is-react-anyways--">What is React anyways ? 🤔</h2>
+<blockquote>
+<p>“A JavaScript library for building user interfaces”</p>
+</blockquote>
+<p>React is a <strong>JavaScript</strong> library created &amp; maintained by <strong>Facebook</strong> to create User Interfaces.</p>
+<p>If you have done web development before and built a medium sized website or application you know that <strong>things can get out of hand</strong> pretty quickly which leads to <strong>bugs</strong>, mainly because the codebase starts to grow. Part of the reason the code gets messy is <strong>repetition</strong>: imagine building a blog and having to copy-paste a blog post to <strong>only then change a few things</strong>.</p>
+<p>Well, that’s where React shines 😎. React uses a <strong>Component based model</strong>, meaning that you can create <strong>reusable pieces of code</strong> that <strong>render</strong> the same code and can receive <strong>arguments</strong>, that&rsquo;s where it gets even better.</p>
+<p>Although, this is only possible because of a few <strong>React abstractions</strong> which I’ll explain in a bit.</p>
+<h2 id="a-blog">A Blog</h2>
+<p>In this article we’ll be <strong>creating a simple blog</strong> that displays a list of posts. You will learn <strong>how to think with React</strong>.</p>
+<p><img src="https://res.cloudinary.com/ddfkf8qha/image/upload/v1578085357/floating%20point%20images/blogimg_wcegtm.png" alt="This is the blog we will be building"></p>
+<blockquote>
+<p>Note: To get the most of this article I recommend tinkering around or even build the project on your own.</p>
+</blockquote>
+<h3 id="overview">Overview</h3>
+<p>The first thing we can do before start coding is <strong>dividing the interface into components &amp; containers</strong> or (<strong>stateless components &amp; stateful components</strong>). You can think of a container as a page (home, settings, about…) that holds multiple components together and it’s from there where we should hold the <strong>state</strong> of the page.</p>
+<p>Note #1: <strong>Containers</strong> are written with the class syntax and extend from <code>React.Component</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomePage</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {...}
+</code></pre></div><p>Note #2: It’s a good practice to make <strong>Components functions</strong> that are responsible for returning specific pieces of the application.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">DumbComponent</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
+    <span style="color:#66d9ef">return</span> (...)
+}
+</code></pre></div><p>Also, rendering components in React looks something like this <code>&lt;HomePage /&gt;</code> or <code>&lt;HomePage&gt;…&lt;/HomePage&gt;</code>.</p>
+<p>So, <strong>state</strong> is what allows us to create <strong>containers that are dynamic</strong> and interactive. It’s a JavaScript object where we store component information like the posts data and maybe the option for a dark mode.</p>
+<p>Note: It’s a good practice to <strong>use the state only in containers</strong>.</p>
+<p>If we have, for example, five components that belong to a specific page, that need data from the state, we should create <strong>one container</strong> component that will store the state for all of them.</p>
+<p>Now let&rsquo;s <strong>divide our interface into components</strong>:</p>
+<p><em>( Yes, it was made in Paint )</em></p>
+<p><img src="https://res.cloudinary.com/ddfkf8qha/image/upload/v1578085363/floating%20point%20images/blogimg__2_yr5hc8.png" alt="Interface divided into components"></p>
+<p>Since we will be only creating a <strong>home page</strong>, one container is enough, I called it <strong>Home.js</strong> and it’s where our post list will live. From the beautiful illustration above you can see that we have a Navbar, the Home container(with the posts) and the Footer on the bottom.</p>
+<p>Something very interesting that I usually do is create a <strong>Layout.js</strong> component that wraps the page, the home page in this case, as it holds <strong>static content</strong> like the <strong>navbar</strong> and the <strong>footer</strong> so if I visited another page on the app I wouldn’t need to write them again (it’s also a clean way to do it).</p>
+<h2 id="coding">Coding</h2>
+<p>The code shown below is on my <a href="https://github.com/sikozonpc/React-simple-blog-app">Github</a> and you can clone it and follow along if you want so.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/sikozonpc/React-simple-blog-app.git
+</code></pre></div><p>Then install all the required dependencies like React:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npm install
+</code></pre></div><p>Ok, we will start coding, as I said before there might be things in the code that I won’t have time or space to compress here but I can explain to you in the comments or in a next article, that&rsquo;s why some basic React/JavaScript knowledge is good.</p>
+<p>This is what the <strong>Render</strong> method in <strong>App.js</strong> looks like, the entry point of our application.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">render</span>() {
+  <span style="color:#66d9ef">return</span> (
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Layout</span> <span style="color:#a6e22e">appTitle</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">apptitle</span>}<span style="color:#f92672">&gt;</span>
+           {<span style="color:#75715e">/* Inside the Layout tags are it&#39;s childs */</span>}
+           <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Home</span> <span style="color:#a6e22e">posts</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">blogPosts</span>} <span style="color:#f92672">/&gt;</span>
+       <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Layout&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+ );
+}
+</code></pre></div><p>The render method is where React transforms our <strong>JSX</strong> code into <strong>DOM nodes</strong> that the browser can understand, also it’s called multiple times when data is changed in the application that needs to be re-rendered.</p>
+<p>When reading the code above, if it’s your first time with React, you might had found a familiar syntax, JavaScript inside HTML elements ? Yes! This is called <strong>JSX</strong> a React <strong>specific abstraction</strong> where you write a HTML-ish syntax with JS, but there are some major differences from the real HTML for instance it’s “className ” instead of “class”. I won’t go to deep but you can read more about JSX, note that this is a <strong>core feature of React</strong> so I recommend learning it.</p>
+<blockquote>
+<p><a href="https://reactjs.org/docs/introducing-jsx.html"> LINK: Introducing JSX official docs</a></p>
+</blockquote>
+<p>Ok, now that you know what JSX is, take a look at the code below, the first 3 things that I want you to note is the <strong>Layout</strong> that is wrapping the Home container, the <strong>“appTitle”</strong> and <strong>“posts”</strong>. I’m sending <strong>props</strong> from the App.js to the Layout.js, props are the <strong>main way of sending data between components</strong> in React. I’m sending the “appTitle” property from App.js state to the Layout which is sending to one of it’s child components(the navbar). Also, the App.js sends “posts”, array containing the blog posts data, to the Home.js that is responsible for transforming and rendering them.</p>
+<h3 id="layoutjs">Layout.js</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Layout</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
+	<span style="color:#66d9ef">return</span> (
+		<span style="color:#f92672">&lt;&gt;</span>
+			<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Navbar</span> <span style="color:#a6e22e">appName</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">appName</span>} <span style="color:#f92672">/&gt;</span>
+			<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">main</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/main&gt;</span>
+			<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Footer</span> <span style="color:#f92672">/&gt;</span>
+		<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/&gt;</span>
+	);
+};
+</code></pre></div><p>Don’t worry if this sounded confusing, it will make sense once you get the hang of React.</p>
+<p>Note the <code>props.appName</code> prop is where the “Blogy” title ends up. Also, I can use the Layout as a wrapper because of the <code>props.children</code>, this is everything that is between the opening and closing tags, in this case it’s the Home component.</p>
+<p>This is a rough sketch of the <strong>Props flow</strong> in the app:</p>
+<p><img src="https://res.cloudinary.com/ddfkf8qha/image/upload/v1578085352/floating%20point%20images/propsflow_bfn9mb.png" alt="Props flow in the app"></p>
+<blockquote>
+<p>The data flows down the component line, from the root to a more specialized component</p>
+</blockquote>
+<p>And this is the <strong>Home.js</strong> container:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Home</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+	<span style="color:#a6e22e">render</span>() {
+		<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">posts</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">posts</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">post</span>) =&gt; {
+			<span style="color:#66d9ef">return</span> (
+				<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">BlogPost</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">post</span>.<span style="color:#a6e22e">id</span>} <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">post</span>.<span style="color:#a6e22e">title</span>} <span style="color:#a6e22e">desc</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">post</span>.<span style="color:#a6e22e">desc</span>} <span style="color:#f92672">/&gt;</span>
+			);
+		});
+		<span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">Home</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">posts</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
+	}
+}
+</code></pre></div><p>If you are familiar with ES6+ JS syntax then you might know that in the <strong>posts variable</strong> I am mapping through the <strong>posts prop</strong> that I sent from the App.js which is an array containing each post and for each one it returns a <code>&lt;BlogPost /&gt;</code> component that is responsible for displaying the blog post data.</p>
+<blockquote>
+<p>Note: Checkout the code on the repository for more detail on the components code.</p>
+</blockquote>
+<p>This way I’m <strong>dynamically rendering components</strong>, cool right ? This is a very powerful feature of <strong>React’s JSX</strong>, it can accept an array of components and render them.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classes</span>.<span style="color:#a6e22e">Home</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">posts</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
+</code></pre></div><p>Also, JavaScript code inside JSX must be between {}.</p>
+<p>If you are wondering how the state looks like in the <strong>App.js</strong>:</p>
+<p><img src="https://res.cloudinary.com/ddfkf8qha/image/upload/v1578085309/floating%20point%20images/stateimg_sva5v8.png" alt="App.js code"></p>
+<blockquote>
+<p><strong>componentDidMount</strong> is a lifecycle method from React.Component that runs after the component output has been rendered to the DOM, and so it’s the perfect place to modify the state.</p>
+</blockquote>
+<p>Before I talk about <strong>Lifecycle methods</strong> note that I used <strong>componentDidMount</strong> to set the state with <strong>setState()</strong> , this is a very important method in React because state in React is <strong>immutable</strong>, which means that state should never be altered or changed directly but rather changed through a copy of the current version of the state, that can easily be made with this.setState().</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Wrong
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">appTitle</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;App title here&#34;</span>;
+<span style="color:#75715e">// Correct
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">appTitle</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;App title here&#34;</span> });
+</code></pre></div><p>So lifecycle methods:</p>
+<blockquote>
+<p>“Every component in React goes through a lifecycle of events. I like to think of them as going through a cycle of birth, growth, and death.”</p>
+</blockquote>
+<p>This quote from Mosh describes it pretty good. The <strong>lifecycle API is constantly changing</strong> and it’s a huge topic on its’ own so the best I can do is redirect you to some good resources to learn more about them, they are a core feature of React so take your time with them.</p>
+<ol>
+<li>
+<p>) <a href="https://programmingwithmosh.com/javascript/react-lifecycle-methods/">React Lifecycle Methods — A Deep Dive</a></p>
+</li>
+<li>
+<p>) <a href="https://reactjs.org/docs/react-component.html?utm_source=caibaojian.com">Official React API Reference</a></p>
+</li>
+<li>
+<p>) <a href="https://reactjs.org/docs/state-and-lifecycle.html">React State and Lifecycle</a></p>
+</li>
+</ol>
+<p>To finish off I would recommend you to <strong>play with this example yourself</strong> and maybe add more features to it or maybe build your application from scratch. There is much more things about React that I can’t fit them all here, so the best thing I can still give you is some places <strong>to learn more about React</strong> that I recommend.</p>
+<ol>
+<li>
+<p>) <a href="https://www.udemy.com/react-the-complete-guide-incl-redux/">React — The Complete Guide</a></p>
+</li>
+<li>
+<p>) <a href="https://www.youtube.com/watch?v=OxIDLw0M-m0&amp;list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG">Complete React Tutorial &amp; Redux</a></p>
+</li>
+<li>
+<p>) <a href="https://learn.freecodecamp.org/">freeCodeCamp React’s section(module 3)</a></p>
+</li>
+</ol>
+<p>Thank you very much for reading my first article and I’m available to explain in more detail anything related. Reviews and spelling errors are also welcome 😃. You can talk to me on twitter <a href="https://twitter.com/tiago_taquelim">@tiago_taquelim</a> .</p>
+<p>Happy coding :)</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/react">react</a></li>
+					
+					<li><a href="/tags/javascript">javascript</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/sikozonpc" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/tiago_taquelim" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2020  © Tiago Taquelim |  Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/athul/archie">Archie</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+
+</div>
+    </body>
+</html>

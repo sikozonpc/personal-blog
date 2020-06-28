@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm Patterns: Frequency Counter - Tiago Taquelim</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Algorithm Patterns: Frequency Counter" />
+<meta property="og:description" content="If you&#39;re working on strings or arrays problems this one is a good candidate for that kind of problems." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiagotaquelim.netlify.app/posts/frequency-counters/" />
+<meta property="article:published_time" content="2019-04-15T20:43:04+01:00" />
+<meta property="article:modified_time" content="2019-04-15T20:43:04+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm Patterns: Frequency Counter"/>
+<meta name="twitter:description" content="If you&#39;re working on strings or arrays problems this one is a good candidate for that kind of problems."/>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://tiagotaquelim.netlify.app/css/main.css" /><link rel="stylesheet" type="text/css" href="https://tiagotaquelim.netlify.app/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head><body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://tiagotaquelim.netlify.app/">Tiago Taquelim</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Blog</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm Patterns: Frequency Counter</h1>
+			<div class="meta">Posted on Apr 15, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Along side with my other post about <a href="%5Bhttps://taquelim.netlify.com/blog/problemsolving%5Dhttps://taquelim.netlify.com/blog/problemsolving">Problem Solving Techniques</a>, in this one I will explain in more detail a pattern to solve algorithms, <strong>this is the first part from a collection of posts about algorithm patterns</strong></p>
+<p>What I&rsquo;m about to talk here is mostly based on the <a href="https://www.udemy.com/js-algorithms-and-data-structures-masterclass/#instructor-1">Colt Steele</a> course on JavaScript algorithms which I highly recommend.</p>
+<h2 id="frequency-counters">Frequency Counters</h2>
+<p>If you&rsquo;re working on strings or arrays problems this one is a good candidate for that kind of problems.</p>
+<p>It works by utilizing one or more objects to store data and record it&rsquo;s occurrences in order to avoid a O(n^2).</p>
+<p>Objects are good for this kind of task because <strong>storing and accessing from data in objects is O(1)</strong> then all we need to be worried about is to loop it.</p>
+<p>Common problems are anagrams strings, intersections, duplicates, count unique values, and more&hellip;</p>
+<h3 id="problem">Problem</h3>
+<blockquote>
+<p><em>Given two arrays, write a function to compute their intersections.</em></p>
+</blockquote>
+<ul>
+<li>Each element in the result should appear as many times as it shows in both arrays.</li>
+<li>The result can be in any order.</li>
+</ul>
+<h3 id="example-1">Example #1</h3>
+<p><strong>Input:</strong> <code>nums1 = [1,2,2,1], nums2 = [2,2]</code>
+<strong>Output:</strong> <code>[2,2]</code></p>
+<h3 id="example-2">Example #2</h3>
+<p><strong>Input:</strong> <code>nums1 = [4,9,5], nums2 = [9,4,9,8,4]</code>
+<strong>Output:</strong> <code>[4,9]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">intersectionArr</span>(<span style="color:#a6e22e">nums1</span>, <span style="color:#a6e22e">nums2</span>) {
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">freq1</span> <span style="color:#f92672">=</span> {};
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">freq2</span> <span style="color:#f92672">=</span> {};
+	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">outpt</span> <span style="color:#f92672">=</span> []; <span style="color:#75715e">// intersected values
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// Transform the Input arrays into frequencies
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">nums1</span>) {
+		<span style="color:#a6e22e">freq1</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">freq1</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">?</span> (<span style="color:#a6e22e">freq1</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+	}
+	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">nums2</span>) {
+		<span style="color:#a6e22e">freq2</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">freq2</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">?</span> (<span style="color:#a6e22e">freq2</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>;
+	}
+
+	<span style="color:#75715e">// Calculate the intersections
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">freq1</span>) {
+		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">freq2</span>) {
+			<span style="color:#75715e">// if they have the same frequency, add n times
+</span><span style="color:#75715e"></span>			<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lowestCommon</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">freq1</span>[<span style="color:#a6e22e">num</span>], <span style="color:#a6e22e">freq2</span>[<span style="color:#a6e22e">num</span>]);
+			<span style="color:#a6e22e">outpt</span>.<span style="color:#a6e22e">push</span>(...<span style="color:#66d9ef">new</span> Array(<span style="color:#a6e22e">lowestCommon</span>).<span style="color:#a6e22e">fill</span>(<span style="color:#a6e22e">num</span>));
+		}
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">outpt</span>;
+}
+</code></pre></div><p>The frequencies will look something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">{ <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> }
+{ <span style="color:#e6db74">&#39;2&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> }
+</code></pre></div><p>As you can see this solution&rsquo;s complexity is something like O(n), which would have been O(n^2) if we did a nested loop.</p>
+<p>Although this approach is not perfect, it uses more memory then others, but it&rsquo;s 94% faster than most.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/computer-science">computer-science</a></li>
+					
+					<li><a href="/tags/javascript">javascript</a></li>
+					
+					<li><a href="/tags/algorithms">algorithms</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/sikozonpc" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/tiago_taquelim" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2020  © Tiago Taquelim |  Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/athul/archie">Archie</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+
+</div>
+    </body>
+</html>

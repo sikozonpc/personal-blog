@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Promises in JavaScript - Tiago Taquelim</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Promises in JavaScript" />
+<meta property="og:description" content="What are Promises in JavaScript, their syntax and more." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiagotaquelim.netlify.app/posts/promises/" />
+<meta property="article:published_time" content="2019-05-27T20:43:04+01:00" />
+<meta property="article:modified_time" content="2019-05-27T20:43:04+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Promises in JavaScript"/>
+<meta name="twitter:description" content="What are Promises in JavaScript, their syntax and more."/>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://tiagotaquelim.netlify.app/css/main.css" /><link rel="stylesheet" type="text/css" href="https://tiagotaquelim.netlify.app/css/dark.css" media="(prefers-color-scheme: dark)" />
+</head><body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://tiagotaquelim.netlify.app/">Tiago Taquelim</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Blog</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Promises in JavaScript</h1>
+			<div class="meta">Posted on May 27, 2019</div>
+		</div>
+		
+
+		<section class="body">
+			<p>Promises might be tricky and I consider them as a high level concept in JavaScript.
+I&rsquo;m using this blog post to investigate more about them myself and teach what I&rsquo;ve learned, if you know anything I din&rsquo;t metion and it&rsquo;s important, Hit me up on <a href="https://twitter.com/tiago_taquelim">Twitter</a>.</p>
+<p>Promises let you create asynchronous methods that <strong>return values like synchronous methods</strong>: instead of immediately returning the final value, <strong>the asynchronous method returns a promise to supply the value at some point in the future</strong>.</p>
+<blockquote>
+<p>&ldquo;JavaScript Object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.&rdquo;</p>
+</blockquote>
+<p>This is the basic syntax for a promise:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
+	<span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">resolve</span>(<span style="color:#e6db74">&#34;Done&#34;</span>), <span style="color:#ae81ff">3000</span>);
+});
+</code></pre></div><blockquote>
+<p><code>new Promise(executor);</code></p>
+</blockquote>
+<ul>
+<li>The <code>executor</code> is a callback function that receives <code>resolve</code> and <code>reject</code> as arguments.</li>
+<li>The executor normally <strong>initiates some asynchronous work</strong>, and then, once that completes, <strong>either calls the resolve</strong> function to resolve the promise or <strong>else rejects it if an error occurred</strong>.</li>
+</ul>
+<p>So after the &ldquo;work&rdquo; is done the promise runs <code>resolve(value)</code> or <code>reject(value)</code></p>
+<p><img src="https://javascript.info/article/promise-basics/promise-resolve-reject@2x.png" alt="Graph"></p>
+<p>For example on the code example shown before the state after 1 second would be <code>fulfilled</code>:</p>
+<p><img src="https://javascript.info/article/promise-basics/promise-resolve-1@2x.png" alt="Success"></p>
+<p>On the other hand, this code will be rejected with an error:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">promise</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Promise(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) {
+	<span style="color:#a6e22e">setTimeout</span>(() =&gt; <span style="color:#a6e22e">reject</span>(<span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;Error&#34;</span>)), <span style="color:#ae81ff">1000</span>);
+});
+</code></pre></div><p><img src="https://javascript.info/article/promise-basics/promise-reject-1@2x.png" alt="Error"></p>
+<p>In conclusion, a promise takes a <code>executor</code> which should do something that usually takes time and then call <code>resolve</code> or <code>reject</code> to change the value of the returning Promise Object.</p>
+<p>Now <strong>to consume the promise</strong> we use the <code>.then()</code>, <code>.catch()</code> and <code>.finally()</code> methods.</p>
+<h3 id="then">.then</h3>
+<p>This one is the most important to consume if the promise is fullfiled.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">promise</span>.<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Done&#34;</span>));
+</code></pre></div><h3 id="catch">.catch</h3>
+<p>This one is run if there is an error</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">promise</span>.<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">alert</span>); <span style="color:#75715e">// shows &#34;Error: Whoops!&#34; after 1 second
+</span></code></pre></div><h3 id="finally">finally</h3>
+<p>Just like there’s a finally clause in a regular <code>try {...} catch {...}</code>, there’s finally in promises.</p>
+<p><code>finally</code> is a good handler for performing <strong>cleanup</strong>, e.g. stopping our loading indicators, as they are not needed any more, no matter what the outcome is.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+  <span style="color:#75715e">/* do something that takes time, and then call resolve/reject */</span>
+})
+  <span style="color:#75715e">// runs when the promise is settled, doesn&#39;t matter successfully or not
+</span><span style="color:#75715e"></span>  .<span style="color:#66d9ef">finally</span>(() =&gt; <span style="color:#a6e22e">stop</span> <span style="color:#a6e22e">loading</span> <span style="color:#a6e22e">indicator</span>)
+  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">result</span> =&gt; <span style="color:#a6e22e">show</span> <span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">err</span> =&gt; <span style="color:#a6e22e">show</span> <span style="color:#a6e22e">error</span>)
+
+</code></pre></div><p>If you want to learn more about Promises and other JavaScript related topics, I can recommend <a href="https://javascript.info">javascript.info</a>, I tooks a lot example from there, and in my opinion is one of the best JavaScript docs.</p>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/javascript">javascript</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/sikozonpc" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/tiago_taquelim" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2020  © Tiago Taquelim |  Built with <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/athul/archie">Archie</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+
+</div>
+    </body>
+</html>

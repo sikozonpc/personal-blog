@@ -3,42 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/tags/javascript/</loc>
-    <lastmod>2020-04-28T20:43:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/posts/my-first-post/</loc>
-    <lastmod>2020-04-28T20:43:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/posts/</loc>
-    <lastmod>2020-04-28T20:43:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/react/</loc>
-    <lastmod>2020-04-28T20:43:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/</loc>
-    <lastmod>2020-04-28T20:43:04+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/about/</loc>
+    <loc>https://tiagotaquelim.netlify.app/about/</loc>
     <lastmod>2020-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://tiagotaquelim.netlify.app/</loc>
     <lastmod>2020-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://tiagotaquelim.netlify.app/tags/javascript/</loc>
+    <lastmod>2019-10-10T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/</loc>
+    <lastmod>2019-10-10T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/tags/react/</loc>
+    <lastmod>2019-10-10T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/webpack-with-react/</loc>
+    <lastmod>2019-10-10T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/tags/</loc>
+    <lastmod>2019-10-10T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/promises/</loc>
+    <lastmod>2019-05-27T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/tags/algorithms/</loc>
+    <lastmod>2019-05-22T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/tags/computer-science/</loc>
+    <lastmod>2019-05-22T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/problem-solving/</loc>
+    <lastmod>2019-05-22T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/starting-with-react/</loc>
+    <lastmod>2019-05-09T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/posts/frequency-counters/</loc>
+    <lastmod>2019-04-15T20:43:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiagotaquelim.netlify.app/categories/</loc>
   </url>
   
 </urlset>

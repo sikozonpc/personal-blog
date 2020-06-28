@@ -2,25 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>react on Tiago Taquelim</title>
-    <link>http://example.org/tags/react/</link>
+    <link>https://tiagotaquelim.netlify.app/tags/react/</link>
     <description>Recent content in react on Tiago Taquelim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
     <copyright>© Tiago Taquelim</copyright>
-    <lastBuildDate>Tue, 28 Apr 2020 20:43:04 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2019 20:43:04 +0100</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/react/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tiagotaquelim.netlify.app/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Tue, 28 Apr 2020 20:43:04 +0100</pubDate>
+      <title>Setting up Webpack with React</title>
+      <link>https://tiagotaquelim.netlify.app/posts/webpack-with-react/</link>
+      <pubDate>Thu, 10 Oct 2019 20:43:04 +0100</pubDate>
       
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description>This is my first psot with Hugo ! Ohh yheaa boiii
-func main() { message := &amp;#34;Lets go !!&amp;#34; fmt.Println(message) }  Yep, thats some Go code boii!!
- </description>
+      <guid>https://tiagotaquelim.netlify.app/posts/webpack-with-react/</guid>
+      <description>&amp;ldquo;At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.&amp;rdquo; -Webpack
+ That quote is the original description that&amp;rsquo;s on the webpack official website.
+If you don&amp;rsquo;t understood it well and you don&amp;rsquo;t even know what a module bundler is don&amp;rsquo;t worry, by the end of this article I will do my best to try to explain everything.</description>
+    </item>
+    
+    <item>
+      <title>Starting with React, Building an application &amp; Tips</title>
+      <link>https://tiagotaquelim.netlify.app/posts/starting-with-react/</link>
+      <pubDate>Thu, 09 May 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/starting-with-react/</guid>
+      <description>NOTE: This article was origanily posted on Medium.
+ So I’ve been learning React for a few months and I wanted to share some of the knowledge I acquired during this journey.
+Building software with React is quite a pleasure for me, I learned new and better ways to do it everyday. However, at the start, especially if you are new to software development it can be a bit overwhelming and complex to understand the abstractions made by these frameworks.</description>
     </item>
     
   </channel>

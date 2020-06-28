@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithms on Tiago Taquelim</title>
+    <link>https://tiagotaquelim.netlify.app/tags/algorithms/</link>
+    <description>Recent content in algorithms on Tiago Taquelim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <copyright>© Tiago Taquelim</copyright>
+    <lastBuildDate>Wed, 22 May 2019 20:43:04 +0100</lastBuildDate>
+    
+	<atom:link href="https://tiagotaquelim.netlify.app/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Problem Solving Techniques</title>
+      <link>https://tiagotaquelim.netlify.app/posts/problem-solving/</link>
+      <pubDate>Wed, 22 May 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/problem-solving/</guid>
+      <description>In my humble opinion I think problem solving is the single most desired skill in a developer or an engineer and odds are if you came from a self-taught path like me, algorithms and complex data structures might be daunting.
+At the start I couldn&amp;rsquo;t even solve easy problems on Hackerrank, even though I knew how to make well rounded applications, and that made me frustrated and anxious.
+So, at the time, I decided to learn the basics of computer science and also took a course on algorithms and data structures with JavaScript from Colt Steele which I highly recommend taking if you relate to me.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm Patterns: Frequency Counter</title>
+      <link>https://tiagotaquelim.netlify.app/posts/frequency-counters/</link>
+      <pubDate>Mon, 15 Apr 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/frequency-counters/</guid>
+      <description>Along side with my other post about Problem Solving Techniques, in this one I will explain in more detail a pattern to solve algorithms, this is the first part from a collection of posts about algorithm patterns
+What I&amp;rsquo;m about to talk here is mostly based on the Colt Steele course on JavaScript algorithms which I highly recommend.
+Frequency Counters If you&amp;rsquo;re working on strings or arrays problems this one is a good candidate for that kind of problems.</description>
+    </item>
+    
+  </channel>
+</rss>

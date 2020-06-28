@@ -2,38 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tiago Taquelim</title>
-    <link>http://example.org/</link>
+    <link>https://tiagotaquelim.netlify.app/</link>
     <description>Recent content on Tiago Taquelim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-GB</language>
     <copyright>© Tiago Taquelim</copyright>
     <lastBuildDate>Tue, 28 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tiagotaquelim.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>My First Post</title>
-      <link>http://example.org/posts/my-first-post/</link>
-      <pubDate>Tue, 28 Apr 2020 20:43:04 +0100</pubDate>
-      
-      <guid>http://example.org/posts/my-first-post/</guid>
-      <description>This is my first psot with Hugo ! Ohh yheaa boiii
-func main() { message := &amp;#34;Lets go !!&amp;#34; fmt.Println(message) }  Yep, thats some Go code boii!!
- </description>
-    </item>
     
     <item>
       <title>About</title>
-      <link>http://example.org/about/</link>
+      <link>https://tiagotaquelim.netlify.app/about/</link>
       <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>https://tiagotaquelim.netlify.app/about/</guid>
       <description>About Hey there, I’m a software developer from Portugal working on the Front-end side of applications.
 I enjoy solving software related problems and building open source tools.
 Work I’m currently working at MobieTrain a micro-learning platform as a Front-end developer.
 I enjoy the most working on complex application and systems.
-Contact I’m available for a chatting through LinkedIn and Twitter.</description>
+Contact I’m available for a chat through my LinkedIn and Twitter.</description>
+    </item>
+    
+    <item>
+      <title>Setting up Webpack with React</title>
+      <link>https://tiagotaquelim.netlify.app/posts/webpack-with-react/</link>
+      <pubDate>Thu, 10 Oct 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/webpack-with-react/</guid>
+      <description>&amp;ldquo;At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.&amp;rdquo; -Webpack
+ That quote is the original description that&amp;rsquo;s on the webpack official website.
+If you don&amp;rsquo;t understood it well and you don&amp;rsquo;t even know what a module bundler is don&amp;rsquo;t worry, by the end of this article I will do my best to try to explain everything.</description>
+    </item>
+    
+    <item>
+      <title>Promises in JavaScript</title>
+      <link>https://tiagotaquelim.netlify.app/posts/promises/</link>
+      <pubDate>Mon, 27 May 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/promises/</guid>
+      <description>Promises might be tricky and I consider them as a high level concept in JavaScript. I&amp;rsquo;m using this blog post to investigate more about them myself and teach what I&amp;rsquo;ve learned, if you know anything I din&amp;rsquo;t metion and it&amp;rsquo;s important, Hit me up on Twitter.
+Promises let you create asynchronous methods that return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.</description>
+    </item>
+    
+    <item>
+      <title>Problem Solving Techniques</title>
+      <link>https://tiagotaquelim.netlify.app/posts/problem-solving/</link>
+      <pubDate>Wed, 22 May 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/problem-solving/</guid>
+      <description>In my humble opinion I think problem solving is the single most desired skill in a developer or an engineer and odds are if you came from a self-taught path like me, algorithms and complex data structures might be daunting.
+At the start I couldn&amp;rsquo;t even solve easy problems on Hackerrank, even though I knew how to make well rounded applications, and that made me frustrated and anxious.
+So, at the time, I decided to learn the basics of computer science and also took a course on algorithms and data structures with JavaScript from Colt Steele which I highly recommend taking if you relate to me.</description>
+    </item>
+    
+    <item>
+      <title>Starting with React, Building an application &amp; Tips</title>
+      <link>https://tiagotaquelim.netlify.app/posts/starting-with-react/</link>
+      <pubDate>Thu, 09 May 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/starting-with-react/</guid>
+      <description>NOTE: This article was origanily posted on Medium.
+ So I’ve been learning React for a few months and I wanted to share some of the knowledge I acquired during this journey.
+Building software with React is quite a pleasure for me, I learned new and better ways to do it everyday. However, at the start, especially if you are new to software development it can be a bit overwhelming and complex to understand the abstractions made by these frameworks.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm Patterns: Frequency Counter</title>
+      <link>https://tiagotaquelim.netlify.app/posts/frequency-counters/</link>
+      <pubDate>Mon, 15 Apr 2019 20:43:04 +0100</pubDate>
+      
+      <guid>https://tiagotaquelim.netlify.app/posts/frequency-counters/</guid>
+      <description>Along side with my other post about Problem Solving Techniques, in this one I will explain in more detail a pattern to solve algorithms, this is the first part from a collection of posts about algorithm patterns
+What I&amp;rsquo;m about to talk here is mostly based on the Colt Steele course on JavaScript algorithms which I highly recommend.
+Frequency Counters If you&amp;rsquo;re working on strings or arrays problems this one is a good candidate for that kind of problems.</description>
     </item>
     
   </channel>

@@ -13,7 +13,8 @@ and so you add a public reference to them or even find it with `FindObjectOfType
 So far so good, but your projects starts growing and something changes and suddenly everything breaks or worst "Silently breaks".
 Not to mention it get's hard to read.
 
-It's alright to have been part of this problem, I was. My earliest projects were like this, and even official Unity tutorials teach like this
+Communication between components is not easy, this is one of the disavantages of ECS [Entity component systems](https://en.wikipedia.org/wiki/Entity_component_system), so it's
+alright to have been part of this problem, I was. My earliest projects were like this, and even official Unity tutorials teach like this
 for simplicity.
 
 However, in this comunity people consume a lot of tutorials, blog posts and even courses that teach and force component coupling.
@@ -26,7 +27,7 @@ a bigger system and has it's own specific job (ideally) and can be attached to a
 
 A good component is a component that nicely fits into the system and is also unaware of the system.
 
-In my opinion, this is what makes Unity so flexible and accessible.
+In my opinion, this is what makes Unity so flexible and accessible, favoring [Composition over inheritance](https://en.wikipedia.org/wiki/Composition_over_inheritance).
 
 
 ### Solution
